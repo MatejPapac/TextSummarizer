@@ -218,3 +218,64 @@ Trying to resume download...]
 [2025-02-10 12:08:29,801: INFO: common: yaml file: params.yaml loaded successfully]
 [2025-02-10 12:08:29,804: INFO: common: created directory at: artifacts]
 [2025-02-10 12:08:29,806: INFO: common: created directory at: artifacts/model_trainer]
+[2025-02-10 13:29:26,881: INFO: config: PyTorch version 2.5.1 available.]
+[2025-02-10 13:44:20,742: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-02-10 13:44:20,753: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-10 13:44:20,758: INFO: common: created directory at: artifacts]
+[2025-02-10 13:44:20,760: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-02-10 13:46:29,920: INFO: rouge_scorer: Using default tokenizer.]
+[2025-02-10 14:13:28,837: INFO: server: Started server process [8664]]
+[2025-02-10 14:13:28,837: INFO: on: Waiting for application startup.]
+[2025-02-10 14:13:28,837: INFO: on: Application startup complete.]
+[2025-02-10 14:13:28,837: INFO: server: Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)]
+[2025-02-10 14:14:57,408: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-02-10 14:14:57,411: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-10 14:14:57,412: INFO: common: created directory at: artifacts]
+[2025-02-10 14:14:57,413: INFO: common: created directory at: artifacts]
+[2025-02-10 14:14:57,414: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-02-10 14:14:57,415: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\app.py", line 33, in predict
+    raise e
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\app.py", line 29, in predict
+    obj = PredictionPipeline()
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\src\textSummarizer\pipeline\prediction_pipeline.py", line 8, in __init__
+    self.config = ConfigurationManager().get_model_evaluation_config()
+  File "C:\Users\matas\Desktop\Ml Ops\TextSummarizer\src\textSummarizer\config\configuration.py", line 71, in get_model_evaluation_config
+    model_evaluation_config = ModelEvaluationConfig(
+TypeError: ModelEvaluationConfig() takes no arguments
+[2025-02-10 14:17:35,477: INFO: server: Shutting down]
+[2025-02-10 14:17:35,584: INFO: on: Waiting for application shutdown.]
+[2025-02-10 14:17:35,584: INFO: on: Application shutdown complete.]
+[2025-02-10 14:17:35,584: INFO: server: Finished server process [8664]]
